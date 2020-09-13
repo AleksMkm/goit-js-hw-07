@@ -33,8 +33,6 @@ const imagesMarkup = images.reduce(
   ""
 );
 
-console.log(imagesMarkup);
-
 const gallery = document.querySelector("#gallery");
 gallery.insertAdjacentHTML("afterbegin", imagesMarkup);
 
