@@ -1,0 +1,20 @@
+.image-gallery {
+  display: flex;
+  flex-direction: row;
+
+  margin: -5px;
+  padding: 0;
+
+  list-style: none;
+}
+
+.image-gallery__item {
+  width: calc(100vw / 3);
+  height: 340px;
+  margin: 5px;
+  object-fit: cover;
+}
+
+.image-gallery__image {
+  display: block;
+}
