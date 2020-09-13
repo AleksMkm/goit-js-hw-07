@@ -9,7 +9,6 @@
 // интерфейса
 
 const counter = document.querySelector("#value");
-console.log(counter);
 
 let counterValue = Number(counter.textContent);
 
