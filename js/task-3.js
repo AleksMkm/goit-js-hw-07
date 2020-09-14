@@ -28,20 +28,20 @@ const images = [
   },
 ];
 
-const imagesMarkup = images.reduce(
-  (acc, { url, alt }) => acc + `<li><img src="${url}" alt="${alt}"></li>`,
-  ""
-);
+const GALLERY_ITEM_CLASS = "image-gallery__item";
+const GALLERY_IMAGE_CLASS = "image-gallery__image";
 
-const gallery = document.querySelector("#gallery");
-gallery.insertAdjacentHTML("afterbegin", imagesMarkup);
+const createGalleryMarkup = (img) => {
+  return img.reduce(
+    (acc, { url, alt }) =>
+      acc +
+      `<li class="${GALLERY_ITEM_CLASS}""><img class="${GALLERY_IMAGE_CLASS}" src="${url}" alt="${alt}"></li>`,
+    ""
+  );
+};
 
-gallery.classList.add("image-gallery");
+const galleryMarkup = createGalleryMarkup(images);
 
-gallery
-  .querySelectorAll("li")
-  .forEach((el) => el.classList.add("image-gallery__item"));
-
-gallery
-  .querySelectorAll("img")
-  .forEach((el) => el.classList.add("image-gallery__item"));
+const galleryEl = document.querySelector("#gallery");
+galleryEl.classList.add("image-gallery");
+galleryEl.insertAdjacentHTML("afterbegin", galleryMarkup);

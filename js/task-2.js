@@ -15,11 +15,15 @@ const ingredients = [
 // список ul.ingredients.Для создания DOM - узлов используй
 // document.createElement().
 
-const ingredientsItems = [];
-for (let i = 0; i < ingredients.length; i += 1) {
-  ingredientsItems.push(document.createElement("li"));
-  ingredientsItems[i].textContent = ingredients[i];
-}
+const createIngredientsItemEl = (ingredients) => {
+  return ingredients.map((ingredient) => {
+    const itemEl = document.createElement("li");
+    itemEl.textContent = ingredient;
+    return itemEl;
+  });
+};
 
-const ingredientsList = document.querySelector("#ingredients");
-ingredientsList.append(...ingredientsItems);
+const ingredientsItemsEl = createIngredientsItemEl(ingredients);
+
+const ingredientsListEl = document.querySelector("#ingredients");
+ingredientsListEl.append(...ingredientsItemsEl);
