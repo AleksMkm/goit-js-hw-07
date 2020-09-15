@@ -42,20 +42,12 @@ function createBoxes(amount) {
   boxesWrapperEl.innerHTML = boxesMarkup;
 }
 
-// inputEl.addEventListener('input', updateValue);
-// function updateValue() {
-//   inputValue = Number(inputEl.value);
-// }
-
-// не могу понять почему не работает ивентЛистенер - разметка
-// генерируется сразу при обновлении страницы а не при клике.
-// 4-ка стоит для примера, туда как я понимаю надо передавать
-//  значение Number(inputEl.value)
-btnCreateEl.addEventListener('click', createBoxes(4));
+btnCreateEl.addEventListener('click', function () {
+  createBoxes(Number(inputEl.value));
+});
 
 function destroyBoxes() {
   boxesWrapperEl.innerHTML = '';
 }
 
-// а вот очищение отлично работает
 btnClearEl.addEventListener('click', destroyBoxes);
