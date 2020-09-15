@@ -9,7 +9,6 @@
 
 const inputEl = document.querySelector('#validation-input');
 const validLength = +inputEl.dataset.length;
-console.log(validLength);
 
 inputEl.addEventListener('change', borderColorChange);
 
