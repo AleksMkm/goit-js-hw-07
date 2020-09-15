@@ -3,12 +3,12 @@
 // в span#name - output.Если инпут пустой, в спане должна отображаться
 // строка 'незнакомец'.
 
-const input = document.querySelector("#name-input");
+const inputEl = document.querySelector('#name-input');
 
-const output = document.querySelector("#name-output");
+const outputEl = document.querySelector('#name-output');
 
-input.addEventListener("input", updateValue);
+inputEl.addEventListener('input', updateValue);
 
 function updateValue() {
-  output.textContent = input.value === "" ? "незнакомец" : input.value;
+  outputEl.textContent = inputEl.value === '' ? 'незнакомец' : inputEl.value;
 }

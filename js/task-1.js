@@ -7,15 +7,15 @@
 // выведет в консоль текст заголовка элемента(тега h2) и количество
 // элементов в категории(всех вложенных в него элементов li).
 
-const categoriesList = document.querySelector("#categories");
+const categoriesList = document.querySelector('#categories');
 console.log(`В списке ${categoriesList.children.length} категории`);
 
 const categoriesListItemArray = [...categoriesList.children];
 
-categoriesListItemArray.forEach((element) => {
+categoriesListItemArray.forEach(element => {
   console.log(
     `Категория: ${
-      element.querySelector("h2").textContent
-    }\nКоличество элементов: ${element.querySelectorAll("li").length}`
+      element.querySelector('h2').textContent
+    }\nКоличество элементов: ${element.querySelectorAll('li').length}`,
   );
 });

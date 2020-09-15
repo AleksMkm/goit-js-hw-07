@@ -2,12 +2,12 @@
 // В JS есть массив строк.
 
 const ingredients = [
-  "Картошка",
-  "Грибы",
-  "Чеснок",
-  "Помидоры",
-  "Зелень",
-  "Приправы",
+  'Картошка',
+  'Грибы',
+  'Чеснок',
+  'Помидоры',
+  'Зелень',
+  'Приправы',
 ];
 
 // Напиши скрипт, который для каждого элемента массива ingredients
@@ -15,9 +15,9 @@ const ingredients = [
 // список ul.ingredients.Для создания DOM - узлов используй
 // document.createElement().
 
-const createIngredientsItemEl = (ingredients) => {
-  return ingredients.map((ingredient) => {
-    const itemEl = document.createElement("li");
+const createIngredientsItemEl = ingredients => {
+  return ingredients.map(ingredient => {
+    const itemEl = document.createElement('li');
     itemEl.textContent = ingredient;
     return itemEl;
   });
@@ -25,5 +25,5 @@ const createIngredientsItemEl = (ingredients) => {
 
 const ingredientsItemsEl = createIngredientsItemEl(ingredients);
 
-const ingredientsListEl = document.querySelector("#ingredients");
+const ingredientsListEl = document.querySelector('#ingredients');
 ingredientsListEl.append(...ingredientsItemsEl);

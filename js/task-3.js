@@ -13,35 +13,36 @@
 const images = [
   {
     url:
-      "https://images.pexels.com/photos/140134/pexels-photo-140134.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-    alt: "White and Black Long Fur Cat",
+      'https://images.pexels.com/photos/140134/pexels-photo-140134.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+    alt: 'White and Black Long Fur Cat',
   },
   {
     url:
-      "https://images.pexels.com/photos/213399/pexels-photo-213399.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-    alt: "Orange and White Koi Fish Near Yellow Koi Fish",
+      'https://images.pexels.com/photos/213399/pexels-photo-213399.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+    alt: 'Orange and White Koi Fish Near Yellow Koi Fish',
   },
   {
     url:
-      "https://images.pexels.com/photos/219943/pexels-photo-219943.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-    alt: "Group of Horses Running",
+      'https://images.pexels.com/photos/219943/pexels-photo-219943.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+    alt: 'Group of Horses Running',
   },
 ];
 
-const GALLERY_ITEM_CLASS = "image-gallery__item";
-const GALLERY_IMAGE_CLASS = "image-gallery__image";
+const GALLERY_CLASS = 'image-gallery';
+const GALLERY_ITEM_CLASS = 'image-gallery__item';
+const GALLERY_IMAGE_CLASS = 'image-gallery__image';
 
-const createGalleryMarkup = (img) => {
+const createGalleryMarkup = img => {
   return img.reduce(
     (acc, { url, alt }) =>
       acc +
       `<li class="${GALLERY_ITEM_CLASS}""><img class="${GALLERY_IMAGE_CLASS}" src="${url}" alt="${alt}"></li>`,
-    ""
+    '',
   );
 };
 
 const galleryMarkup = createGalleryMarkup(images);
 
-const galleryEl = document.querySelector("#gallery");
-galleryEl.classList.add("image-gallery");
-galleryEl.insertAdjacentHTML("afterbegin", galleryMarkup);
+const galleryEl = document.querySelector('#gallery');
+galleryEl.classList.add(GALLERY_CLASS);
+galleryEl.insertAdjacentHTML('afterbegin', galleryMarkup);

@@ -7,10 +7,15 @@
 // зеленым, если неправильное - красным.
 // Для добавления стилей, используй CSS - классы valid и invalid.
 
-const input = document.querySelector("#validation-input");
-const validLength = +input.dataset.length;
+const inputEl = document.querySelector('#validation-input');
+const validLength = +inputEl.dataset.length;
 console.log(validLength);
 
-input.addEventListener("change", borderColorChange);
+inputEl.addEventListener('change', borderColorChange);
 
-function borderColorChange() {}
+function borderColorChange() {
+  inputEl.classList.remove(...inputEl.classList);
+  inputEl.value.length >= validLength
+    ? inputEl.classList.add('valid')
+    : inputEl.classList.add('invalid');
+}
