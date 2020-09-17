@@ -10,11 +10,11 @@
 const inputEl = document.querySelector('#validation-input');
 const validLength = +inputEl.dataset.length;
 
-inputEl.addEventListener('change', borderColorChange);
+inputEl.onblur = borderColorChange;
 
 function borderColorChange() {
-  inputEl.classList.remove(...inputEl.classList);
-  inputEl.value.length >= validLength
-    ? inputEl.classList.add('valid')
-    : inputEl.classList.add('invalid');
+  this.classList.remove(...this.classList);
+  this.value.length === validLength
+    ? this.classList.add('valid')
+    : this.classList.add('invalid');
 }

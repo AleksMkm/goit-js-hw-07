@@ -10,5 +10,5 @@ const outputEl = document.querySelector('#name-output');
 inputEl.addEventListener('input', updateValue);
 
 function updateValue() {
-  outputEl.textContent = inputEl.value === '' ? 'незнакомец' : inputEl.value;
+  outputEl.textContent = this.value === '' ? 'незнакомец' : this.value;
 }
