@@ -9,6 +9,7 @@ const outputEl = document.querySelector('#name-output');
 
 inputEl.addEventListener('input', updateValue);
 
-function updateValue() {
-  outputEl.textContent = this.value === '' ? 'незнакомец' : this.value;
+function updateValue(event) {
+  outputEl.textContent =
+    event.currentTarget.value === '' ? 'незнакомец' : event.currentTarget.value;
 }

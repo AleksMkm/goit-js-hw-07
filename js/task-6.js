@@ -12,9 +12,10 @@ const validLength = +inputEl.dataset.length;
 
 inputEl.onblur = borderColorChange;
 
-function borderColorChange() {
-  this.classList.remove(...this.classList);
-  this.value.length === validLength
-    ? this.classList.add('valid')
-    : this.classList.add('invalid');
+function borderColorChange(event) {
+  const ref = event.currentTarget;
+  ref.classList.remove(...ref.classList);
+  ref.value.length === validLength
+    ? ref.classList.add('valid')
+    : ref.classList.add('invalid');
 }
